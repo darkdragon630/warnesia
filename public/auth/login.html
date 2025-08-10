@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Warnesia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff4b5c, #ffffff, #4f46e5);
+            background-size: 300% 300%;
+            animation: gradientShift 12s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .batik-bg {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Batik_pattern.svg/1200px-Batik_pattern.svg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center relative">
+    
+    <!-- Background Batik -->
+    <div class="absolute inset-0 batik-bg"></div>
+
+    <!-- Card Login -->
+    <div class="glass rounded-2xl shadow-xl max-w-4xl w-full flex flex-col md:flex-row overflow-hidden animate-fadeIn">
+        
+        <!-- Kiri -->
+        <div class="md:w-1/2 bg-indigo-700 flex flex-col justify-center items-center p-8 text-white relative">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/282d18b9-6500-465c-91d5-06dbeab3c834.png" 
+                 alt="Logo Warnesia" class="h-16 mb-6">
+            <h2 class="text-3xl font-bold mb-4">Selamat Datang Kembali</h2>
+            <p class="text-indigo-100 text-center">
+                Bergabunglah kembali untuk menjelajahi AI Nusantara yang memahami budaya dan bahasa Indonesia.
+            </p>
+        </div>
+
+        <!-- Kanan -->
+        <div class="md:w-1/2 p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Masuk ke Akun</h2>
+            <form action="#" method="POST" class="space-y-5">
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@contoh.com"
+                        class="w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none border">
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-700 font-medium">Kata Sandi</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••"
+                        class="w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none border">
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                    <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="form-checkbox text-indigo-600">
+                        <span>Ingat saya</span>
+                    </label>
+                    <a href="#" class="text-indigo-600 hover:underline">Lupa kata sandi?</a>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition duration-300">
+                    Masuk
+                </button>
+            </form>
+
+            <p class="mt-6 text-center text-gray-600">
+                Belum punya akun? 
+                <a href="signup.html" class="text-indigo-600 hover:underline">Daftar</a>
+            </p>
+
+            <!-- Social Login -->
+            <div class="mt-8">
+                <p class="text-center text-gray-500 mb-4">Atau masuk dengan</p>
+                <div class="grid grid-cols-3 gap-4">
+                    <button class="flex items-center justify-center space-x-2 bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="flex items-center justify-center space-x-2 bg-gray-800 hover:bg-gray-900 text-white py-2 rounded-lg transition">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animasi fadeIn
+        document.querySelector('.animate-fadeIn').style.opacity = 0;
+        setTimeout(() => {
+            document.querySelector('.animate-fadeIn').style.transition = "opacity 1.2s";
+            document.querySelector('.animate-fadeIn').style.opacity = 1;
+        }, 200);
+    </script>
+</body>
+</html>

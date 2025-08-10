@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Models - Warnesia</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html">
+                    <i class="fas fa-robot"></i>
+                    <span>Warnesia</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Beranda</a>
+                <a href="chat.html" class="nav-link">Chat</a>
+                <a href="../upload/upload.html" class="nav-link">Upload</a>
+                <a href="models.html" class="nav-link active">Models</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="models-container">
+        <div class="models-header">
+            <h1>AI Models</h1>
+            <p>Pilih model AI yang sesuai dengan kebutuhan Anda</p>
+        </div>
+
+        <!-- Model Categories -->
+        <div class="model-categories">
+            <button class="category-btn active" data-category="all" onclick="filterModels('all')">
+                Semua Model
+            </button>
+            <button class="category-btn" data-category="text" onclick="filterModels('text')">
+                Text Generation
+            </button>
+            <button class="category-btn" data-category="code" onclick="filterModels('code')">
+                Code Generation
+            </button>
+            <button class="category-btn" data-category="image" onclick="filterModels('image')">
+                Image Analysis
+            </button>
+            <button class="category-btn" data-category="multimodal" onclick="filterModels('multimodal')">
+                Multimodal
+            </button>
+        </div>
+
+        <!-- Models Grid -->
+        <div class="models-grid" id="modelsGrid">
+            <!-- GPT-4 -->
+            <div class="model-card" data-category="text multimodal">
+                <div class="model-header">
+                    <div class="model-logo">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="model-info">
+                        <h3>GPT-4 Turbo</h3>
+                        <span class="model-badge premium">Premium</span>
+                    </div>
+                </div>
+                <div class="model-description">
+                    <p>Model yang cepat dan efisien untuk berbagai tugas text generation dan coding dengan performa yang baik.</p>
+                </div>
+                <div class="model-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-memory"></i>
+                        <span>16K context</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>Fast response</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-code"></i>
+                        <span>Code support</span>
+                    </div>
+                </div>
+                <div class="model-actions">
+                    <button class="btn btn-primary" onclick="selectModel('gpt-3.5')">
+                        <i class="fas fa-check"></i>
+                        Pilih Model
+                    </button>
+                    <button class="btn btn-secondary" onclick="testModel('gpt-3.5')">
+                        <i class="fas fa-play"></i>
+                        Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- Claude 3 -->
+            <div class="model-card" data-category="text multimodal">
+                <div class="model-header">
+                    <div class="model-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="model-info">
+                        <h3>Claude 3 Opus</h3>
+                        <span class="model-badge premium">Premium</span>
+                    </div>
+                </div>
+                <div class="model-description">
+                    <p>Model dari Anthropic dengan fokus pada keamanan dan kemampuan analisis yang mendalam.</p>
+                </div>
+                <div class="model-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-memory"></i>
+                        <span>200K context</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Safe AI</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analysis</span>
+                    </div>
+                </div>
+                <div class="model-actions">
+                    <button class="btn btn-primary" onclick="selectModel('claude-3')">
+                        <i class="fas fa-check"></i>
+                        Pilih Model
+                    </button>
+                    <button class="btn btn-secondary" onclick="testModel('claude-3')">
+                        <i class="fas fa-play"></i>
+                        Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gemini Pro -->
+            <div class="model-card" data-category="text multimodal">
+                <div class="model-header">
+                    <div class="model-logo">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="model-info">
+                        <h3>Gemini Pro</h3>
+                        <span class="model-badge free">Free</span>
+                    </div>
+                </div>
+                <div class="model-description">
+                    <p>Model dari Google dengan kemampuan multimodal yang kuat dan integrasi yang baik.</p>
+                </div>
+                <div class="model-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-memory"></i>
+                        <span>32K context</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-image"></i>
+                        <span>Vision support</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Multilingual</span>
+                    </div>
+                </div>
+                <div class="model-actions">
+                    <button class="btn btn-primary" onclick="selectModel('gemini-pro')">
+                        <i class="fas fa-check"></i>
+                        Pilih Model
+                    </button>
+                    <button class="btn btn-secondary" onclick="testModel('gemini-pro')">
+                        <i class="fas fa-play"></i>
+                        Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- CodeLlama -->
+            <div class="model-card" data-category="code">
+                <div class="model-header">
+                    <div class="model-logo">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <div class="model-info">
+                        <h3>Code Llama</h3>
+                        <span class="model-badge free">Free</span>
+                    </div>
+                </div>
+                <div class="model-description">
+                    <p>Model khusus untuk code generation dan programming dengan performa sangat baik untuk coding tasks.</p>
+                </div>
+                <div class="model-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-memory"></i>
+                        <span>16K context</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-code"></i>
+                        <span>Multi-language</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-bug"></i>
+                        <span>Debug support</span>
+                    </div>
+                </div>
+                <div class="model-actions">
+                    <button class="btn btn-primary" onclick="selectModel('codellama')">
+                        <i class="fas fa-check"></i>
+                        Pilih Model
+                    </button>
+                    <button class="btn btn-secondary" onclick="testModel('codellama')">
+                        <i class="fas fa-play"></i>
+                        Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vision Model -->
+            <div class="model-card" data-category="image multimodal">
+                <div class="model-header">
+                    <div class="model-logo">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="model-info">
+                        <h3>Vision Analyzer</h3>
+                        <span class="model-badge coming-soon">Coming Soon</span>
+                    </div>
+                </div>
+                <div class="model-description">
+                    <p>Model khusus untuk analisis gambar dengan kemampuan OCR, object detection, dan image understanding.</p>
+                </div>
+                <div class="model-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-image"></i>
+                        <span>Image analysis</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-search"></i>
+                        <span>OCR support</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Object detection</span>
+                    </div>
+                </div>
+                <div class="model-actions">
+                    <button class="btn btn-secondary" disabled>
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </button>
+                    <a href="comingsoon.html" class="btn btn-primary">
+                        <i class="fas fa-info"></i>
+                        Info
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Model Test Modal -->
+    <div id="testModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Test Model: <span id="testModelName"></span></h3>
+                <button class="close-btn" onclick="closeTestModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-input">
+                    <label for="testPrompt">Test Prompt:</label>
+                    <textarea id="testPrompt" placeholder="Masukkan prompt untuk test model...">Halo! Jelaskan tentang AI dalam 2-3 kalimat.</textarea>
+                </div>
+                <div class="test-result" id="testResult">
+                    <!-- Test result akan muncul di sini -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTestModal()">Close</button>
+                <button class="btn btn-primary" onclick="runTest()">
+                    <i class="fas fa-play"></i>
+                    Run Test
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/models.js"></script>
+</body>
+</html>    <p>Model terdepan dari OpenAI dengan kemampuan reasoning yang sangat baik dan support multimodal.</p>
+                </div>
+                <div class="model-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-memory"></i>
+                        <span>128K context</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-image"></i>
+                        <span>Vision support</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-code"></i>
+                        <span>Code generation</span>
+                    </div>
+                </div>
+                <div class="model-actions">
+                    <button class="btn btn-primary" onclick="selectModel('gpt-4')">
+                        <i class="fas fa-check"></i>
+                        Pilih Model
+                    </button>
+                    <button class="btn btn-secondary" onclick="testModel('gpt-4')">
+                        <i class="fas fa-play"></i>
+                        Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- GPT-3.5 Turbo -->
+            <div class="model-card" data-category="text code">
+                <div class="model-header">
+                    <div class="model-logo">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="model-info">
+                        <h3>GPT-3.5 Turbo</h3>
+                        <span class="model-badge free">Free</span>
+                    </div>
+                </div>
+                <div class="model-description">

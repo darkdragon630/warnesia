@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - Warnesia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-b from-red-50 to-white font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center py-4 px-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/282d18b9-6500-465c-91d5-06dbeab3c834.png" alt="Logo Warnesia" class="h-8 w-8 mr-2">
+                <span class="font-semibold text-gray-800 text-lg">Warnesia</span>
+            </a>
+            <a href="login.html" class="text-gray-600 hover:text-red-600 font-medium transition">Masuk</a>
+        </div>
+    </nav>
+
+    <!-- Signup Card -->
+    <div class="flex items-center justify-center min-h-screen px-4">
+        <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8 border-t-4 border-red-500">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Buat Akun Baru</h2>
+
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Nama Lengkap</label>
+                    <input type="text" name="fullname" placeholder="Masukkan nama lengkap" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Email</label>
+                    <input type="email" name="email" placeholder="Masukkan email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Password</label>
+                    <input type="password" name="password" placeholder="Masukkan password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Konfirmasi Password</label>
+                    <input type="password" name="confirm_password" placeholder="Ulangi password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                </div>
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-lg shadow-md transition">Daftar</button>
+            </form>
+
+            <!-- OR separator -->
+            <div class="flex items-center my-6">
+                <hr class="flex-1 border-gray-300">
+                <span class="px-3 text-gray-500 text-sm">atau daftar dengan</span>
+                <hr class="flex-1 border-gray-300">
+            </div>
+
+            <!-- Social Login -->
+            <div class="grid grid-cols-1 gap-3">
+                <a href="#" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
+                    <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" class="w-5 h-5 mr-3">
+                    <span class="text-gray-700 font-medium">Google</span>
+                </a>
+                <a href="#" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
+                    <img src="https://www.svgrepo.com/show/349375/github.svg" alt="GitHub" class="w-5 h-5 mr-3">
+                    <span class="text-gray-700 font-medium">GitHub</span>
+                </a>
+                <a href="#" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50 transition">
+                    <img src="https://www.svgrepo.com/show/157810/facebook.svg" alt="Facebook" class="w-5 h-5 mr-3">
+                    <span class="text-gray-700 font-medium">Facebook</span>
+                </a>
+            </div>
+
+            <p class="text-center text-gray-600 text-sm mt-6">
+                Sudah punya akun? <a href="login.html" class="text-red-600 hover:underline">Masuk di sini</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 mt-12">
+        <div class="text-center text-sm text-gray-400">
+            &copy; 2025 Warnesia. Semua hak dilindungi.
+        </div>
+    </footer>
+</body>
+</html>

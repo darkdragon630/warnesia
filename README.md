@@ -1,1 +1,1 @@
-# warnesia
+# Warnesia AI Project
